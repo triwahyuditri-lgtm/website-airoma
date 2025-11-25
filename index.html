@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiRoma Custom Parfum</title>
+  <meta name="description" content="AiRoma – custom parfum bar di Loa Janan Ilir, Samarinda. Bikin parfum sesuai karakter kamu dengan bantuan AI & perfumer." />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Scroll behavior halus */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3">
+        <span class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-rose-400/60 bg-white">
+          <img id="site-icon" src="/logo.png" alt="AiRoma" class="w-30 h-30 object-contain" />
+        </span>
+        <div class="flex flex-col leading-tight">
+          <span class="font-serif text-xl tracking-wide">AiRoma</span>
+          <span class="text-[12px] text-slate-400 uppercase tracking-[0.16em]">Custom Parfum Lab</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#collections" class="hover:text-rose-200 transition-colors"> Koleksi </a>
+        <a href="#how-it-works" class="hover:text-rose-200 transition-colors"> Cara kerja </a>
+        <a href="#experience" class="hover:text-rose-200 transition-colors"> Experience </a>
+        <a href="#faq" class="hover:text-rose-200 transition-colors"> FAQ </a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#contact" class="text-xs font-medium text-slate-300 hover:text-rose-200 transition-colors">
+          Lokasi & Kontak
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-400 px-4 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-rose-500/30">
+          Booking sesi racik
+        </a>
+      </div>
+
+      <!-- Mobile button -->
+      <button id="menu-btn" class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700 p-2">
+        <span class="sr-only">Toggle menu</span>
+        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobile-menu" class="md:hidden border-t border-slate-800 bg-slate-950/95 hidden">
+      <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-2 text-sm">
+        <a href="#collections" class="py-1 hover:text-rose-200">Koleksi</a>
+        <a href="#how-it-works" class="py-1 hover:text-rose-200">Cara kerja</a>
+        <a href="#experience" class="py-1 hover:text-rose-200">Experience</a>
+        <a href="#faq" class="py-1 hover:text-rose-200">FAQ</a>
+        <a href="#contact" class="py-2 mt-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-400 text-center font-semibold text-slate-950">
+          Booking sesi racik
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(248,113,113,0.18),_transparent_60%),radial-gradient(circle_at_bottom,_rgba(251,191,36,0.16),_transparent_55%)] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20 grid lg:grid-cols-2 gap-12 items-center relative">
+      <!-- Text -->
+      <div class="space-y-6">
+        <span class="inline-flex items-center gap-2 rounded-full border border-rose-400/40 bg-slate-900/70 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-rose-200">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          Loa Janan Ilir • Samarinda
+        </span>
+
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight">
+          Custom parfum, diracik
+          <span class="bg-gradient-to-r from-rose-300 to-amber-200 bg-clip-text text-transparent">
+            khusus buat kamu.
+          </span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-slate-300 max-w-xl">
+          AiRoma adalah parfum bar kecil yang menggabungkan
+          <span class="font-semibold">AI & perfumer manusia</span>.
+          Kamu cukup cerita karakter, gaya, dan mood favorit—kami racik
+          komposisi EDP 30ml yang wangi, tahan lama, dan beda dari parfum pasaran.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-500 to-amber-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-rose-500/30">
+            Jadwalkan sesi konsultasi
+          </a>
+          <a href="#collections" class="text-sm text-slate-300 hover:text-rose-200">
+            Lihat contoh racikan →
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400 pt-4">
+          <div>
+            <div class="font-semibold text-slate-200">30+ akord khas</div>
+            Bisa dikustom sesuai karakter kamu.
+          </div>
+          <div>
+            <div class="font-semibold text-slate-200">EDP 25% oil</div>
+            Formulasi tahan lama, cocok iklim tropis.
+          </div>
+          <div>
+            <div class="font-semibold text-slate-200">Bisa bawa botol sendiri</div>
+            Lebih hemat & less waste.
+          </div>
+        </div>
+      </div>
+
+      <!-- Image / mockup -->
+      <div class="relative">
+        <div class="absolute -top-10 -right-6 h-32 w-32 rounded-full bg-rose-500/20 blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-amber-400/20 blur-3xl"></div>
+
+        <div class="relative mx-auto max-w-md rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-950/70 p-5 shadow-2xl shadow-black/60">
+          <div class="flex justify-between items-center mb-4">
+            <div class="space-y-1">
+              <p class="text-xs uppercase tracking-[0.16em] text-slate-400">Signature Blend</p>
+              <p class="font-serif text-xl text-rose-100">AiRoma Rose Tea</p>
+            </div>
+            <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] text-emerald-300 border border-emerald-400/40">
+              Custom ID • AR-027
+            </span>
+          </div>
+
+          <div class="flex gap-4 items-center">
+            <!-- Bottle placeholder -->
+            <div class="relative h-40 w-28 rounded-2xl bg-gradient-to-br from-rose-200/70 via-amber-100/70 to-rose-300/60 flex items-end justify-center overflow-hidden">
+              <div class="absolute inset-x-4 top-3 h-4 rounded-full bg-slate-900/10"></div>
+              <div class="absolute inset-x-6 top-0 h-2 rounded-b-full bg-slate-900/5"></div>
+
+              <!-- Bottle image -->
+              <img src="/images/bottle.png" alt="Botol parfum AiRoma" class="absolute bottom-2 z-15 w-25 h-auto object-contain pointer-events-none" />
+
+              <!-- Label -->
+              <span class="relative z-20 mb-3 text-xs font-semibold tracking-[0.16em] text-slate-900/80 uppercase">
+              AiRoma
+              </span>
+            </div>
+
+            <!-- Notes -->
+            <div class="flex-1 space-y-3 text-xs">
+              <div>
+                <p class="text-slate-400 uppercase tracking-[0.16em] mb-1">Top</p>
+                <p class="text-slate-100">Bergamot, Black Tea Accord</p>
+              </div>
+              <div>
+                <p class="text-slate-400 uppercase tracking-[0.16em] mb-1">Heart</p>
+                <p class="text-slate-100">Rose Petals, Jasmine Sambac</p>
+              </div>
+              <div>
+                <p class="text-slate-400 uppercase tracking-[0.16em] mb-1">Base</p>
+                <p class="text-slate-100">Sandalwood, White Musk, Ambrofix</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+            <span>EDP • 30ml • Oil 25%</span>
+            <span>Start from <span class="text-rose-200 font-semibold">Rp 50.000</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections" class="border-t border-slate-800 bg-slate-950/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 class="font-serif text-2xl md:text-3xl mb-2">Sample koleksi AiRoma</h2>
+          <p class="text-sm text-slate-300 max-w-xl">
+            Semua racikan bisa di-custom: lebih fresh, lebih sweet, atau ditambah layer musky.
+            Ini hanya contoh untuk bantu kamu milih “jalur wangi” dulu.
+          </p>
+        </div>
+        <p class="text-xs text-slate-400 max-w-sm">
+          Note: nama & komposisi hanya ilustrasi. Di lab, kita sesuaikan dengan stok oil asli dan preferensi kamu.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-rose-300">Floral fresh</p>
+            <h3 class="font-serif text-xl">AiRoma Morning Bloom</h3>
+            <p class="text-xs text-slate-300">
+              Floral airy buat kamu yang suka wangi bersih, berasa habis mandi & siap kerja.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-200">
+              <li><span class="text-slate-400">Top:</span> Lemon, Green Tea</li>
+              <li><span class="text-slate-400">Heart:</span> Jasmine, Peony</li>
+              <li><span class="text-slate-400">Base:</span> White Musk, Cedarwood</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+            <span>Best for: daily, office</span>
+            <span>Durasi ±6–8 jam</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-amber-300">Tea & skin</p>
+            <h3 class="font-serif text-xl">AiRoma Geranium Tea</h3>
+            <p class="text-xs text-slate-300">
+              Tea-based yang soft, clean, nggak nyegrak. Cocok buat yang anti parfum “pusing”.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-200">
+              <li><span class="text-slate-400">Top:</span> Bergamot, Spearmint (opsional)</li>
+              <li><span class="text-slate-400">Heart:</span> Geranium, Rose</li>
+              <li><span class="text-slate-400">Base:</span> Sandalwood, Iso E Super, White Musk</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+            <span>Best for: cafe, santai</span>
+            <span>Unisex • Signature AiRoma</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-300">Woody amber</p>
+            <h3 class="font-serif text-xl">AiRoma Night Drive</h3>
+            <p class="text-xs text-slate-300">
+              Sedikit dark, sexy tapi masih wearable. Buat malam minggu atau acara formal.
+            </p>
+            <ul class="mt-3 space-y-1 text-xs text-slate-200">
+              <li><span class="text-slate-400">Top:</span> Grapefruit, Blackcurrant</li>
+              <li><span class="text-slate-400">Heart:</span> Lavender, Patchouli</li>
+              <li><span class="text-slate-400">Base:</span> Ambrofix, Tonka Bean, Musk</li>
+            </ul>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+            <span>Best for: malam, dating</span>
+            <span>Projecting • Crowd-pleaser</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="font-serif text-2xl md:text-3xl mb-3">Cara kerja sesi custom parfum</h2>
+        <p class="text-sm text-slate-300">
+          Kurang dari 45 menit, kamu sudah pulang bawa parfum yang benar-benar “kamu banget”.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="relative rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+          <div class="absolute -top-3 -left-3 h-8 w-8 rounded-full bg-rose-500 text-slate-950 flex items-center justify-center text-xs font-bold">
+            1
+          </div>
+          <h3 class="font-semibold mb-2">Ngobrol dulu</h3>
+          <p class="text-sm text-slate-300">
+            Kamu isi mini form + ngobrol singkat: kerja di mana, aktivitas, parfum yang pernah dipakai, wangi favorit / yang anti.
+          </p>
+        </div>
+
+        <div class="relative rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+          <div class="absolute -top-3 -left-3 h-8 w-8 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-xs font-bold">
+            2
+          </div>
+          <h3 class="font-semibold mb-2">AI + perfumer racik</h3>
+          <p class="text-sm text-slate-300">
+            Sistem AIroma bantu pilih akord & bahan dari database lab, lalu perfumer adjust manual sampai balance di kulit kamu.
+          </p>
+        </div>
+
+        <div class="relative rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+          <div class="absolute -top-3 -left-3 h-8 w-8 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-xs font-bold">
+            3
+          </div>
+          <h3 class="font-semibold mb-2">Test, label, bawa pulang</h3>
+          <p class="text-sm text-slate-300">
+            Kamu coba di kulit, bisa direvisi sekali dua kali. Kalau sudah oke, kami tulis nama blend + kode batch di botol dan kartu resep.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / TESTIMONIAL -->
+  <section id="experience" class="border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid md:grid-cols-[1.3fr,1fr] gap-10 items-center">
+      <div>
+        <h2 class="font-serif text-2xl md:text-3xl mb-4">Bukan cuma beli parfum, tapi pengalaman ngeracik.</h2>
+        <p class="text-sm text-slate-300 mb-4">
+          AiRoma dibuat supaya orang awam pun bisa paham layer parfum: top–heart–base.
+          Setiap botol datang dengan <span class="font-semibold text-rose-200">“kartu resep”</span> berisi komposisi singkat,
+          cara pakai, dan catatan evaluasi.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li>• Bisa bawa pasangan / teman untuk racik bareng (couple / bestie session).</li>
+          <li>• Cocok untuk hadiah ulang tahun, bridal shower, atau corporate gift kecil-kecilan.</li>
+          <li>• Reminder digital via WhatsApp kalau kamu mau repeat order dengan kode batch yang sama.</li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-950/80 p-5 space-y-4 shadow-xl shadow-black/50">
+        <p class="text-xs uppercase tracking-[0.16em] text-rose-300">Apa kata pelanggan</p>
+        <p class="text-sm text-slate-100">
+          “Biasanya aku pusing sama parfum, tapi racikan tea-base dari AiRoma ini enteng banget. Wangi nya
+          berasa ‘kulit bersih + teh hangat’, bukan kayak toko parfum di mall. Suami sampai minta dibikinin versi cowoknya.”
+        </p>
+        <div class="flex items-center justify-between text-xs text-slate-400">
+          <div>
+            <p class="font-semibold text-slate-200">N.</p>
+            <p>Customer AiRoma Geranium Tea</p>
+          </div>
+          <div class="flex items-center gap-1">
+            <span>Rating</span>
+            <span class="text-amber-300">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-14">
+      <div class="text-center mb-8">
+        <h2 class="font-serif text-2xl md:text-3xl mb-3">Pertanyaan yang sering ditanyain</h2>
+        <p class="text-sm text-slate-300">Kalau masih bingung, tinggal chat WhatsApp kita.</p>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100">Berapa harga sesi custom parfum?</span>
+            <span class="text-xs text-slate-400 group-open:hidden">+</span>
+            <span class="text-xs text-slate-400 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-2 text-slate-300">
+            Start dari sekitar <span class="font-semibold text-rose-200">Rp 50.000 untuk 30ml EDP</span>,
+            tergantung bahan yang dipakai. Harga final dijelasin dulu sebelum diracik.
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100">Apa bisa repeat order wangi yang sama?</span>
+            <span class="text-xs text-slate-400 group-open:hidden">+</span>
+            <span class="text-xs text-slate-400 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-2 text-slate-300">
+            Bisa. Setiap racikan punya <span class="font-semibold">kode batch</span>. Kamu tinggal kirim kode itu via WhatsApp,
+            kita racik ulang dengan komposisi sama (kalau stock oil masih ada).
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100">Apakah parfum langsung bisa dipakai?</span>
+            <span class="text-xs text-slate-400 group-open:hidden">+</span>
+            <span class="text-xs text-slate-400 hidden group-open:inline">−</span>
+          </summary>
+          <p class="mt-2 text-slate-300">
+            Bisa langsung dipakai, tapi idealnya didiamkan dulu minimal 3–7 hari biar proses maceration jalan
+            dan wangi lebih menyatu.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <section id="contact" class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-[1.1fr,1fr] gap-8">
+      <div>
+      <h2 class="font-serif text-2xl md:text-3xl mb-3">Lokasi & kontak</h2>
+      <p class="text-sm text-slate-300 mb-4">
+        AiRoma Custom Parfum — Loa Janan Ilir, Samarinda (depan Mixue).  
+        Datang langsung atau booking dulu via WhatsApp biar kita siapin slot racik khusus buat kamu.
+      </p>
+
+      <div class="space-y-2 text-sm text-slate-300">
+        <p class="flex items-center gap-3">
+        <svg class="h-4 w-4 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 5a2 2 0 012-2h1.5a1 1 0 01.9.55l1 2a1 1 0 01-.2 1.1L6.2 9.5a11 11 0 005.3 5.3l2.8-1.3a1 1 0 011.1-.2l2 1a1 1 0 01.55.9V19a2 2 0 01-2 2A16 16 0 013 5z"/>
+        </svg>
+        <span class="text-slate-400">WhatsApp:</span>
+        <span class="font-semibold">+62 851-1979-2408</span>
+        </p>
+
+        <p class="flex items-center gap-3">
+        <svg class="h-4 w-4 text-pink-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M7 2h10a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V5a3 3 0 013-3zm5 6a4 4 0 100 8 4 4 0 000-8zM17.5 6.5a1 1 0 110 2 1 1 0 010-2z"/>
+          <circle cx="12" cy="12" r="3.2" fill="white" opacity="0.02"/>
+        </svg>
+        <span class="text-slate-400">Instagram:</span>
+        <span class="font-semibold">@airoma.id (contoh)</span>
+        </p>
+
+        <p class="flex items-center gap-3">
+        <svg class="h-4 w-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 1a11 11 0 100 22 11 11 0 000-22zm1 12.5V7a1 1 0 10-2 0v6a1 1 0 00.29.71l3.5 3.5a1 1 0 001.41-1.41L13 13.5z"/>
+        </svg>
+        <span class="text-slate-400">Jam buka:</span>
+        <span class="font-semibold">10.00 – 21.00 (disesuaikan)</span>
+        </p>
+      </div>
+      </div>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 space-y-4">
+      <p class="text-sm font-semibold text-slate-100">Form quick note (demo)</p>
+      <p class="text-xs text-slate-400">
+        Hubungi kami di bawah ini untuk dapat info lebih lanjut atau tanya-tanya.
+      </p>
+      <form class="space-y-3" id="contact-form">
+        <div>
+        <label class="block text-xs text-slate-400 mb-1">Nama</label>
+        <input id="contact-name" type="text" class="w-full rounded-xl bg-slate-950/70 border border-slate-700 px-3 py-2 text-sm focus:outline-none focus:border-rose-400" placeholder="Nama kamu" />
+        </div>
+        <div>
+        <label class="block text-xs text-slate-400 mb-1">Kontak WhatsApp</label>
+        <input id="contact-wa" type="text" class="w-full rounded-xl bg-slate-950/70 border border-slate-700 px-3 py-2 text-sm focus:outline-none focus:border-rose-400" placeholder="08xx xxxx xxxx" />
+        </div>
+        <div>
+        <label class="block text-xs text-slate-400 mb-1">Catatan singkat</label>
+        <textarea id="contact-note" rows="3" class="w-full rounded-xl bg-slate-950/70 border border-slate-700 px-3 py-2 text-sm focus:outline-none focus:border-rose-400" placeholder="Contoh: mau racik wangi teh soft buat dipakai kerja."></textarea>
+        </div>
+        <!-- ganti nomor di bawah dengan nomor WhatsApp bisnis kamu (contoh: +6281234567890) -->
+        <button type="button" id="wa-send-btn" data-phone="+6285119792408" class="w-full rounded-full bg-gradient-to-r from-rose-500 to-amber-400 px-4 py-2 text-sm font-semibold text-slate-950">
+        Kirim (demo)
+        </button>
+      </form>
+
+      <script>
+        (function(){
+        const btn = document.getElementById('wa-send-btn');
+        btn.addEventListener('click', () => {
+          const phoneRaw = btn.getAttribute('data-phone') || '+6285119792408'; // ganti ke nomor kamu
+          const phone = phoneRaw.replace(/\D/g, ''); // hanya angka
+          const name = document.getElementById('contact-name').value.trim();
+          const wa = document.getElementById('contact-wa').value.trim();
+          const note = document.getElementById('contact-note').value.trim();
+
+          const message = [
+          'Halo AiRoma,',
+          '',
+          `Nama: ${name || '-'}`,
+          `Kontak: ${wa || '-'}`,
+          `Catatan: ${note || '-'}`,
+          '',
+          'Saya mau booking sesi racik.'
+          ].join('\n');
+
+          const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+          window.open(url, '_blank');
+        });
+        })();
+      </script>
+      </div>
+    </div>
+
+    <footer class="border-t border-slate-800 py-4 text-center text-[11px] text-slate-500">
+      © <span id="year"></span> AiRoma Custom Parfum. Built with ♥ in Samarinda.
+    </footer>
+  </section>
+
+  <!-- Small JS for menu & year -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
